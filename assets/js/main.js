@@ -19,20 +19,34 @@ navMenu.addEventListener("click", (event) => {
   }
 });
 
-// Animações de entrada ao rolar
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
+// Animações de entrada ao rolar.
+// Baseado na posição atual (e não em IntersectionObserver) para que seções
+// puladas por links de âncora também apareçam.
+let revealQueued = false;
 
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+function revealVisible() {
+  revealQueued = false;
+  const limit = window.innerHeight * 0.88;
+  document.querySelectorAll(".reveal:not(.is-visible)").forEach((el) => {
+    if (el.getBoundingClientRect().top < limit) {
+      el.classList.add("is-visible");
+    }
+  });
+}
+
+function queueReveal() {
+  if (revealQueued) return;
+  revealQueued = true;
+  requestAnimationFrame(revealVisible);
+}
+
+window.addEventListener("scroll", queueReveal, { passive: true });
+window.addEventListener("resize", queueReveal);
+// O salto para uma âncora (#servicos, #faq...) nem sempre dispara "scroll",
+// então revalidamos também no load e na troca de hash.
+window.addEventListener("load", queueReveal);
+window.addEventListener("hashchange", queueReveal);
+revealVisible();
 
 // Ano atual no rodapé
 document.getElementById("year").textContent = new Date().getFullYear();
