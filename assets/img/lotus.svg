@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <symbol id="lotus" viewBox="0 0 48 48">
+    <g fill="none" stroke="#1d5d84" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- pétala central -->
+      <path d="M24 8c3.5 4.5 5.5 9 5.5 13.5S27 30 24 32c-3-2-5.5-6-5.5-10.5S20.5 12.5 24 8Z" fill="#e3f2f3"/>
+      <!-- pétalas internas -->
+      <path d="M15 14c4 2.5 6.5 6 7.5 10s.5 7-1 9c-3-.5-6-2.5-8-6s-2-8.5 1.5-13Z" fill="#ffffff"/>
+      <path d="M33 14c-4 2.5-6.5 6-7.5 10s-.5 7 1 9c3-.5 6-2.5 8-6s2-8.5-1.5-13Z" fill="#ffffff"/>
+      <!-- pétalas externas -->
+      <path d="M8 22c4.5.5 8 2.5 10.5 5.5s3.5 6 3 8.5c-3 .5-6.5-.5-9.5-3S8.5 26.5 8 22Z" fill="#e3f2f3"/>
+      <path d="M40 22c-4.5.5-8 2.5-10.5 5.5s-3.5 6-3 8.5c3 .5 6.5-.5 9.5-3s3.5-6.5 4-11Z" fill="#e3f2f3"/>
+      <!-- base -->
+      <path d="M14 37c3 1.5 6.5 2.3 10 2.3s7-.8 10-2.3" stroke="#7fc4c9"/>
+    </g>
+  </symbol>
+  <use href="#lotus"/>
+</svg>
