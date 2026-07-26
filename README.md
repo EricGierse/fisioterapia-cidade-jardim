@@ -22,12 +22,12 @@ python3 -m http.server 4173
 
 E abra http://localhost:4173
 
-## Publicando no GitHub Pages
+## Site publicado
 
-1. Crie o repositório no GitHub e faça push.
-2. Em **Settings → Pages**, escolha *Deploy from a branch*, branch `main`, pasta `/ (root)`.
-3. O site sai em `https://SEU-USUARIO.github.io/NOME-DO-REPO/`.
-4. Atualize a URL no bloco JSON-LD do `index.html` (campo `"url"`).
+**https://ericgierse.github.io/fisioterapia-cidade-jardim/**
+
+Servido pelo GitHub Pages a partir da branch `main`, pasta raiz. Todo push na `main`
+republica o site automaticamente.
 
 ## Informações já confirmadas (via Instagram)
 
