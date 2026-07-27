@@ -6,11 +6,44 @@ Sem dependências, sem build — só HTML, CSS e JS puros. Pronta para hospedar 
 ## Estrutura
 
 ```
-index.html            → página completa (única página)
-assets/css/styles.css → estilos
-assets/js/main.js     → menu mobile, animações, ano do rodapé
-assets/img/           → logo (lotus.svg), favicon
+index.html            → página completa + sprite de ícones SVG (inline)
+assets/css/styles.css → estilos e responsividade
+assets/js/main.js     → módulos de interação
+assets/img/           → favicon, logo
+assets/img/fotos/     → onde entram as fotos (ver LEIA-ME.md de lá)
 ```
+
+## Interações implementadas
+
+Cada módulo do `main.js` é independente e sai sem erro se seus elementos
+não existirem, então mexer no HTML nunca derruba o resto da página.
+
+| Módulo | O que faz |
+| --- | --- |
+| `reveal` | entrada das seções ao rolar, com escalonamento |
+| `progress` | barra de leitura no topo |
+| `header` | sombra do cabeçalho ao descolar do topo |
+| `topbar` | aviso de endereço dispensável (lembra na sessão) |
+| `menu` | drawer lateral com backdrop, trava de rolagem, foco preso e Esc |
+| `spy` | destaca a seção atual no menu com indicador deslizante |
+| `counter` | contagem animada dos números |
+| `parallax` | leve profundidade nos cartões do hero (só desktop) |
+| `filter` | filtra serviços por categoria |
+| `carousel` | depoimentos com autoplay, setas, pontos, arraste e teclado |
+| `faq` | sanfona com uma resposta aberta por vez |
+| `form` | monta a mensagem e abre o WhatsApp (nada sai do aparelho) |
+| `copy` | copia o endereço com aviso de confirmação |
+| `floating` | voltar ao topo e barra fixa do celular |
+
+### Decisões de robustez
+
+- **Sem JavaScript** a página continua legível: nada fica invisível, as
+  respostas do FAQ abrem e os depoimentos empilham.
+- **Reveal e contadores** têm varredura direta e rede de segurança por
+  tempo, então nunca ficam em branco nem travados num número parcial.
+- **`prefers-reduced-motion`** desliga animações, parallax e autoplay.
+- **Ícones** são um sprite SVG inline: sem requisição extra, herdam a cor
+  do contexto e ficam nítidos em qualquer tela.
 
 ## Rodando localmente
 
@@ -53,4 +86,6 @@ Procure por `TODO` no `index.html`. Falta preencher:
 | Convênios/planos de saúde além dos passes | seção `#parcerias` |
 | Perguntas extras do FAQ (valores, pagamento, cancelamento) | seção `#faq` |
 | Imagem Open Graph (`og:image`) | `<head>` |
-| URL final do site no JSON-LD | `<head>` |
+
+Os textos entre colchetes (`[Nome do profissional]`, `[horário a confirmar]`)
+são os pontos que aparecem na tela e precisam ser trocados.
