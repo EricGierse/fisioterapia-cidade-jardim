@@ -509,20 +509,32 @@ html:not(.js) .carousel__controls { display: none; }
 /* ---------- Parcerias ---------- */
 .partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .partner {
-  display: flex; align-items: center; gap: 1rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.05rem;
+  text-align: center;
   background: var(--white); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 1.35rem 1.5rem;
+  border-radius: var(--radius); padding: 1.9rem 1.5rem;
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 .partner:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+
+/* Os três logos têm proporções bem diferentes (5,5:1, 6,7:1 e 3,1:1).
+   Encaixá-los numa mesma caixa com `contain` equilibra opticamente: os
+   muito largos ficam mais baixos, o compacto ganha altura. */
 .partner__logo {
-  width: 52px; height: 52px; flex: none; border-radius: 15px;
-  background: linear-gradient(150deg, var(--brand), var(--aqua));
-  color: var(--white); font-weight: 800; font-size: 1.35rem;
-  display: grid; place-items: center;
+  height: 34px; width: 100%; max-width: 190px;
+  display: flex; align-items: center; justify-content: center;
 }
-.partner p { font-size: 0.85rem; }
+/* `height: 100%` (e não `max-height`) é o que faz o SVG do Wellhub crescer:
+   ele declara 141x26 e, sem isso, ficaria travado nesse tamanho.
+   O `contain` garante que nada distorça ao bater no limite de largura. */
+.partner__logo img {
+  height: 100%; width: auto; max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s var(--ease);
+}
+.partner:hover .partner__logo img { transform: scale(1.05); }
+.partner p { font-size: 0.87rem; max-width: 26ch; }
 
 /* ---------- Formulário ---------- */
 .booking { background: linear-gradient(180deg, var(--white) 0%, #f3f9f9 100%); }
@@ -812,6 +824,15 @@ body.is-locked { overflow: hidden; }
   .header { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255, 255, 255, 0.97); }
   .header.is-stuck { background: var(--white); }
 
+  /* O painel do menu mora dentro do cabeçalho, então herda o contexto de
+     empilhamento dele. Com o header em z-index 80 e o fundo escurecido em
+     84, o menu inteiro era pintado por baixo do desfoque. O header precisa
+     ficar acima do backdrop para o menu aparecer nítido. */
+  .header { z-index: 86; }
+  /* E o botão de fechar fica acima do painel, para continuar visível e
+     clicável com o menu aberto. */
+  .nav__toggle { position: relative; z-index: 87; }
+
   .nav__panel {
     position: fixed; inset: 0 0 0 auto; width: min(360px, 86vw); z-index: 85;
     background: var(--white);
@@ -855,10 +876,11 @@ body.is-locked { overflow: hidden; }
   .nav__indicator-host { display: none; }
   .btn--nav { margin-top: 1.4rem; width: 100%; }
 
+  /* No celular a barra fixa já é a camada de ação. Os botões flutuantes
+     seriam redundantes e, pior, cobriam o canto direito dos campos do
+     formulário — inclusive a seta do seletor de serviço. */
   .mobilebar { display: flex; }
-  .fab--whatsapp { bottom: calc(5.2rem + var(--safe-b)); }
-  .fab--top { bottom: calc(9.4rem + var(--safe-b)); }
-  .fab__tip { display: none; }
+  .fab { display: none; }
 }
 
 @media (max-width: 640px) {
