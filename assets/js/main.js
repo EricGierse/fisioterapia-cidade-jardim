@@ -303,15 +303,21 @@
     }, { threshold: 0.5 });
     nums.forEach(function (el) { io.observe(el); });
 
-    /* Mesma proteção do reveal: o número nunca fica travado num valor
-       parcial nem em zero. */
-    window.setTimeout(function () {
+    /* Mesma proteção do reveal: varredura direta por scroll, sem depender
+       do observer, para que o número nunca fique travado num valor parcial
+       nem em zero — inclusive se a faixa só entrar em tela bem depois. */
+    function sweep() {
+      var restantes = 0;
       nums.forEach(function (el) {
-        var visivel = el.getBoundingClientRect().top < window.innerHeight;
-        if (done.indexOf(el) === -1 && visivel) fire(el);
-        if (visivel && el.textContent !== String(finalValue(el))) setFinal(el);
+        if (done.indexOf(el) > -1) return;
+        if (el.getBoundingClientRect().top < window.innerHeight) fire(el);
+        else restantes++;
       });
-    }, 2500);
+      if (!restantes) window.removeEventListener("scroll", sweep);
+    }
+
+    window.addEventListener("scroll", sweep, { passive: true });
+    window.setTimeout(sweep, 2500);
 
     /* Se a aba voltar a ficar visível no meio da contagem, completa. */
     document.addEventListener("visibilitychange", function () {
