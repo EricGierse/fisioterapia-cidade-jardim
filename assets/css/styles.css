@@ -140,6 +140,9 @@ a { color: inherit; }
 .btn--ghost:hover { border-color: var(--brand); background: var(--aqua-soft); transform: translateY(-2px); }
 
 .btn--outline { color: var(--brand); border: 2px solid var(--brand); background: transparent; }
+/* Um respiro maior que o dos parágrafos entre si, só neste botão que
+   fecha o bloco "A clínica" — o texto e o CTA não devem colar. */
+#sobre a.btn--outline { margin-top: 1.5rem; }
 .btn--outline:hover { background: var(--brand); color: var(--white); transform: translateY(-2px); }
 
 .btn--light { background: var(--white); color: var(--brand-dark); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22); }
