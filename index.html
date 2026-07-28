@@ -26,7 +26,7 @@
 
   <!-- O ?v= força o navegador a baixar a versão nova em vez de usar a do
        cache. Incremente o número sempre que editar o CSS ou o JS. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
 
   <!-- Marca que o JS está ativo. Sem isso, todo conteúdo animado permanece visível. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -420,28 +420,80 @@
       <div class="section__head">
         <span class="eyebrow" data-reveal>Equipe</span>
         <h2 data-reveal data-reveal-delay="1">Quem cuida de você</h2>
-        <p data-reveal data-reveal-delay="2">Profissionais dedicados, com formação e experiência para cada especialidade.</p>
+        <p data-reveal data-reveal-delay="2">Seis fisioterapeutas com formações complementares — do esporte à gerontologia, da saúde pélvica à reabilitação neurológica.</p>
       </div>
 
-      <!-- TODO: substituir pelos nomes reais, fotos (assets/img/fotos/equipe-N.jpg), CREFITO e especialidades -->
       <div class="cards cards--team">
         <article class="card card--team" data-reveal>
-          <div class="avatar"><svg aria-hidden="true"><use href="#i-user"/></svg></div>
-          <h3>[Nome do profissional]</h3>
-          <p class="card--team__role">[Especialidade] · CREFITO [número]</p>
-          <p>[Miniapresentação: formação, tempo de experiência e áreas de atuação.]</p>
+          <div class="avatar">
+            <img src="assets/img/equipe/marcia.jpg" alt="Márcia" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Márcia</h3>
+            <p class="card--team__role">Hidroterapia · Esportiva · Gerontologia</p>
+            <p class="card--team__crefito">CREFITO 39705-F</p>
+          </div>
+          <p class="card--team__bio">Fisioterapeuta e educadora física, especialista em Hidroterapia, Fisioterapia Esportiva e Geriatria e Gerontologia.</p>
         </article>
+
         <article class="card card--team" data-reveal data-reveal-delay="1">
-          <div class="avatar"><svg aria-hidden="true"><use href="#i-user"/></svg></div>
-          <h3>[Nome do profissional]</h3>
-          <p class="card--team__role">[Especialidade] · CREFITO [número]</p>
-          <p>[Miniapresentação: formação, tempo de experiência e áreas de atuação.]</p>
+          <div class="avatar">
+            <img src="assets/img/equipe/anapaula.jpg" alt="Dra. Ana Paula Volkers" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Dra. Ana Paula Volkers</h3>
+            <p class="card--team__role">Saúde da Mulher e do Homem</p>
+            <p class="card--team__crefito">CREFITO 213821-F</p>
+          </div>
+          <p class="card--team__bio">Especializada em Saúde da Mulher e do Homem pela Santa Casa de São Paulo, com atuação em Fisioterapia Pélvica e formação completa em RPG e Pilates.</p>
         </article>
+
         <article class="card card--team" data-reveal data-reveal-delay="2">
-          <div class="avatar"><svg aria-hidden="true"><use href="#i-user"/></svg></div>
-          <h3>[Nome do profissional]</h3>
-          <p class="card--team__role">[Especialidade] · CREFITO [número]</p>
-          <p>[Miniapresentação: formação, tempo de experiência e áreas de atuação.]</p>
+          <div class="avatar">
+            <img src="assets/img/equipe/caroline.jpg" alt="Caroline Espíndola de Andrade" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Caroline Espíndola de Andrade</h3>
+            <p class="card--team__role">Gerontologia</p>
+            <p class="card--team__crefito">CREFITO 212383-F</p>
+          </div>
+          <p class="card--team__bio">Fisioterapeuta pela Universidade de Mogi das Cruzes, especializada em Gerontologia pela FMU e com formação completa em Pilates.</p>
+        </article>
+
+        <article class="card card--team" data-reveal data-reveal-delay="3">
+          <div class="avatar">
+            <img src="assets/img/equipe/rosalia.jpg" alt="" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Rosália Firmino da Silva</h3>
+            <p class="card--team__role">UTI · Ortopédica · Neurológica</p>
+            <p class="card--team__crefito">CREFITO 222312</p>
+          </div>
+          <p class="card--team__bio">Fisioterapeuta pelo Centro Universitário Sant&rsquo;Anna e pós-graduada em Fisioterapia em UTI, com atuação em Ortopédica, Neurológica, Respiratória e Pilates.</p>
+        </article>
+
+        <article class="card card--team" data-reveal data-reveal-delay="4">
+          <div class="avatar">
+            <img src="assets/img/equipe/thales.jpg" alt="Dr. Thales Romero" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Dr. Thales Romero</h3>
+            <p class="card--team__role">Esporte e Exercício</p>
+            <p class="card--team__crefito">CREFITO 3244103-F</p>
+          </div>
+          <p class="card--team__bio">Especializado em Fisioterapia do Esporte e Exercício pelo HCFMUSP, com atuação junto a atletas de alto rendimento e na reabilitação de lesões.</p>
+        </article>
+
+        <article class="card card--team" data-reveal data-reveal-delay="5">
+          <div class="avatar">
+            <img src="assets/img/equipe/marcelo.jpg" alt="Marcelo Hirose" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Marcelo Hirose</h3>
+            <p class="card--team__role">Ortopédica · Fisiologia e Biomecânica</p>
+            <p class="card--team__crefito">CREFITO 115679-F</p>
+          </div>
+          <p class="card--team__bio">Graduado pela UNIP e pós-graduado em Fisiologia e Biomecânica pelo HCFMUSP, com formação completa em Pilates e RPG.</p>
         </article>
       </div>
     </div>
@@ -816,6 +868,6 @@
   </a>
 </div>
 
-<script src="assets/js/main.js?v=8"></script>
+<script src="assets/js/main.js?v=9"></script>
 </body>
 </html>
