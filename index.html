@@ -26,7 +26,7 @@
 
   <!-- O ?v= força o navegador a baixar a versão nova em vez de usar a do
        cache. Incremente o número sempre que editar o CSS ou o JS. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=13" />
 
   <!-- Marca que o JS está ativo. Sem isso, todo conteúdo animado permanece visível. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -47,6 +47,20 @@
       "addressRegion": "SP",
       "addressCountry": "BR"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "00:00"
+      }
+    ],
     "sameAs": ["https://www.instagram.com/fisioterapiacidadejardim/"]
   }
   </script>
@@ -702,11 +716,11 @@
 
         <div class="hours" data-reveal data-reveal-delay="3">
           <h3><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg> Horários de atendimento</h3>
-          <!-- TODO: substituir pelos horários oficiais da clínica -->
           <ul>
-            <li><span>Segunda a sexta</span><span>[horário a confirmar]</span></li>
-            <li><span>Sábado</span><span>[horário a confirmar]</span></li>
-            <li><span>Domingo</span><span>[a confirmar]</span></li>
+            <li><span>Segunda a sexta</span><span>7h às 20h</span></li>
+            <li><span>Sábado</span><span class="hours__closed">Fechado</span></li>
+            <li><span>Domingo</span><span class="hours__closed">Fechado</span></li>
+            <li><span>Feriados</span><span class="hours__closed">Fechado</span></li>
           </ul>
           <p class="hours__note">Confirme disponibilidade de horários pelo WhatsApp.</p>
         </div>
@@ -869,6 +883,6 @@
   </a>
 </div>
 
-<script src="assets/js/main.js?v=12"></script>
+<script src="assets/js/main.js?v=13"></script>
 </body>
 </html>

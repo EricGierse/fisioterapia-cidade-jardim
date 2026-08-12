@@ -647,6 +647,9 @@ html:not(.js) .carousel__controls { display: none; }
   font-size: 0.94rem; color: var(--ink-soft);
 }
 .hours li span:first-child { font-weight: 600; color: var(--ink); }
+/* dia fechado sai mais apagado: quem procura horário varre a coluna da
+   direita e precisa achar o dia que abre sem ler linha por linha */
+.hours__closed { color: var(--ink-mute); font-size: 0.88rem; }
 .hours__note { font-size: 0.84rem; margin-top: 0.6rem; }
 
 .contact-lines { display: grid; gap: 0.55rem; margin-top: 1.7rem; }
