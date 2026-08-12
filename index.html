@@ -26,7 +26,7 @@
 
   <!-- O ?v= força o navegador a baixar a versão nova em vez de usar a do
        cache. Incremente o número sempre que editar o CSS ou o JS. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
 
   <!-- Marca que o JS está ativo. Sem isso, todo conteúdo animado permanece visível. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -159,7 +159,7 @@
         <li><a href="#faq" data-spy>Dúvidas</a></li>
         <li class="nav__indicator-host"><span class="nav__indicator" id="navIndicator" aria-hidden="true"></span></li>
       </ul>
-      <a class="btn btn--primary btn--nav" href="#agendar">
+      <a class="btn btn--primary btn--nav" data-magnetic href="#agendar">
         <svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg>
         Agendar sessão
       </a>
@@ -171,24 +171,25 @@
   <!-- ============ HERO ============ -->
   <section class="hero" id="topo">
     <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__aura" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="container hero__grid">
       <div class="hero__content">
-        <span class="eyebrow" data-reveal>
+        <span class="eyebrow" data-reveal="zoom">
           <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>
           Jardim Paulistano · São Paulo
         </span>
-        <h1 data-reveal data-reveal-delay="1">Movimento que <em>cuida</em> de você</h1>
-        <p class="hero__lead" data-reveal data-reveal-delay="2">
+        <h1 class="split" data-reveal data-reveal-delay="1">Movimento que <em>cuida</em> de você</h1>
+        <p class="hero__lead" data-reveal="blur" data-reveal-delay="2">
           Fisioterapia e Pilates com atendimento individualizado, em um espaço novo
           preparado com carinho para acolher cada fase do seu tratamento — da reabilitação
           à prevenção e ao bem-estar.
         </p>
         <div class="hero__actions" data-reveal data-reveal-delay="3">
-          <a class="btn btn--primary btn--lg" href="https://wa.me/5511988058005?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+          <a class="btn btn--primary btn--lg" data-magnetic href="https://wa.me/5511988058005?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
             <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
             Agendar pelo WhatsApp
           </a>
-          <a class="btn btn--ghost btn--lg" href="#servicos">
+          <a class="btn btn--ghost btn--lg" data-magnetic href="#servicos">
             Conhecer os serviços
             <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
           </a>
@@ -200,7 +201,7 @@
         </ul>
       </div>
 
-      <div class="hero__art" data-reveal data-reveal-delay="2" aria-hidden="true">
+      <div class="hero__art" data-reveal="zoom" data-reveal-delay="2" data-parallax="0.14" aria-hidden="true">
         <div class="hero__stage" id="heroStage">
           <div class="hero__card hero__card--main" data-depth="0.4">
             <!-- TODO: trocar por foto real (assets/img/fotos/hero-principal.jpg) -->
@@ -229,19 +230,19 @@
   <!-- ============ FAIXA DE NÚMEROS ============ -->
   <section class="strip" aria-label="Destaques da clínica">
     <div class="container strip__grid">
-      <div class="strip__item" data-reveal>
+      <div class="strip__item" data-reveal="zoom">
         <span class="strip__num" data-count="9">0</span>
         <p>especialidades integradas em um só lugar</p>
       </div>
-      <div class="strip__item" data-reveal data-reveal-delay="1">
+      <div class="strip__item" data-reveal="zoom" data-reveal-delay="1">
         <span class="strip__num">1:1</span>
         <p>atendimento individual, do início ao fim</p>
       </div>
-      <div class="strip__item" data-reveal data-reveal-delay="2">
+      <div class="strip__item" data-reveal="zoom" data-reveal-delay="2">
         <span class="strip__num" data-count="3">0</span>
         <p>passes de bem-estar aceitos</p>
       </div>
-      <div class="strip__item" data-reveal data-reveal-delay="3">
+      <div class="strip__item" data-reveal="zoom" data-reveal-delay="3">
         <span class="strip__num strip__num--ico"><svg aria-hidden="true"><use href="#i-sparkles"/></svg></span>
         <p>novo espaço na Av. Cidade Jardim, 427</p>
       </div>
@@ -253,7 +254,7 @@
     <div class="container section__grid">
       <div>
         <span class="eyebrow" data-reveal>A clínica</span>
-        <h2 data-reveal data-reveal-delay="1">Uma nova fase, o mesmo cuidado de sempre</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Uma nova fase, o mesmo cuidado de sempre</h2>
         <p data-reveal data-reveal-delay="2">
           A <strong>Fisioterapia e Pilates Cidade Jardim</strong> nasceu para oferecer um
           cuidado próximo e humano no coração do Jardim Paulistano. Em junho de 2026
@@ -310,11 +311,11 @@
     <div class="container">
       <div class="section__head">
         <span class="eyebrow" data-reveal>Serviços</span>
-        <h2 data-reveal data-reveal-delay="1">Especialidades para cada necessidade</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Especialidades para cada necessidade</h2>
         <p data-reveal data-reveal-delay="2">Da reabilitação ortopédica ao relaxamento profundo — tudo em um só lugar.</p>
       </div>
 
-      <div class="filters" role="tablist" aria-label="Filtrar serviços" data-reveal>
+      <div class="filters" role="tablist" aria-label="Filtrar serviços" data-reveal="zoom">
         <button class="filter is-active" role="tab" aria-selected="true" data-filter="todos">Todos</button>
         <button class="filter" role="tab" aria-selected="false" data-filter="fisio">Fisioterapia</button>
         <button class="filter" role="tab" aria-selected="false" data-filter="manual">Terapias manuais</button>
@@ -323,47 +324,47 @@
 
       <div class="cards" id="servicosGrid">
         <!-- TODO (fotos): cada .card__media abaixo recebe a foto correspondente de assets/img/fotos/ -->
-        <article class="card" data-cat="fisio" data-reveal>
+        <article class="card" data-tilt data-cat="fisio" data-reveal>
           <span class="card__media"><svg aria-hidden="true"><use href="#i-bone"/></svg></span>
           <h3>Fisioterapia Ortopédica</h3>
           <p>Reabilitação de lesões musculares, articulares e pós-operatórias, com foco no retorno seguro às suas atividades.</p>
         </article>
-        <article class="card" data-cat="fisio" data-reveal data-reveal-delay="1">
+        <article class="card" data-tilt data-cat="fisio" data-reveal data-reveal-delay="1">
           <span class="card__media"><svg aria-hidden="true"><use href="#i-flower"/></svg></span>
           <h3>Fisioterapia Pélvica</h3>
           <p>Avaliação e tratamento das disfunções do assoalho pélvico, com privacidade e acolhimento.</p>
         </article>
-        <article class="card" data-cat="estudio" data-reveal data-reveal-delay="2">
+        <article class="card" data-tilt data-cat="estudio" data-reveal data-reveal-delay="2">
           <span class="card__media"><svg aria-hidden="true"><use href="#i-person"/></svg></span>
           <h3>Pilates</h3>
           <p>Aulas com equipamentos, focadas em força, mobilidade, postura e consciência corporal.</p>
         </article>
-        <article class="card" data-cat="fisio" data-reveal>
+        <article class="card" data-tilt data-cat="fisio" data-reveal>
           <span class="card__media"><svg aria-hidden="true"><use href="#i-ruler"/></svg></span>
           <h3>RPG</h3>
           <p>Reeducação Postural Global para corrigir desequilíbrios, aliviar dores e melhorar a postura.</p>
         </article>
-        <article class="card" data-cat="manual" data-reveal data-reveal-delay="1">
+        <article class="card" data-tilt data-cat="manual" data-reveal data-reveal-delay="1">
           <span class="card__media"><svg aria-hidden="true"><use href="#i-hands"/></svg></span>
           <h3>Quiropraxia</h3>
           <p>Ajustes articulares para alívio de tensões e melhora da função da coluna e articulações.</p>
         </article>
-        <article class="card" data-cat="manual" data-reveal data-reveal-delay="2">
+        <article class="card" data-tilt data-cat="manual" data-reveal data-reveal-delay="2">
           <span class="card__media"><svg aria-hidden="true"><use href="#i-waves"/></svg></span>
           <h3>Liberação Miofascial</h3>
           <p>Técnica manual que libera tensões da fáscia muscular, melhorando dor e amplitude de movimento.</p>
         </article>
-        <article class="card" data-cat="manual" data-reveal>
+        <article class="card" data-tilt data-cat="manual" data-reveal>
           <span class="card__media"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span>
           <h3>Massagem Terapêutica</h3>
           <p>Relaxamento profundo e alívio de tensões musculares acumuladas no dia a dia.</p>
         </article>
-        <article class="card" data-cat="manual" data-reveal data-reveal-delay="1">
+        <article class="card" data-tilt data-cat="manual" data-reveal data-reveal-delay="1">
           <span class="card__media"><svg aria-hidden="true"><use href="#i-droplet"/></svg></span>
           <h3>Drenagem Linfática</h3>
           <p>Estímulo manual do sistema linfático para reduzir inchaço e retenção de líquidos.</p>
         </article>
-        <article class="card" data-cat="fisio" data-reveal data-reveal-delay="2">
+        <article class="card" data-tilt data-cat="fisio" data-reveal data-reveal-delay="2">
           <span class="card__media"><svg aria-hidden="true"><use href="#i-home"/></svg></span>
           <h3>Atendimento Domiciliar</h3>
           <p>Fisioterapia no conforto da sua casa, com a mesma qualidade do atendimento em clínica.</p>
@@ -374,7 +375,7 @@
 
       <div class="section__cta" data-reveal>
         <p>Não sabe qual serviço é ideal para você?</p>
-        <a class="btn btn--primary" href="#agendar">
+        <a class="btn btn--primary" data-magnetic href="#agendar">
           Fale com a gente — indicamos o melhor caminho
           <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
         </a>
@@ -385,7 +386,7 @@
   <!-- ============ PILATES ============ -->
   <section class="section highlight" id="pilates">
     <div class="container section__grid">
-      <div class="highlight__art" data-reveal aria-hidden="true">
+      <div class="highlight__art" data-reveal="left" data-parallax="0.09" aria-hidden="true">
         <div class="highlight__panel">
           <!-- TODO: trocar por foto real (assets/img/fotos/estudio-pilates.jpg) -->
           <svg class="highlight__big" aria-hidden="true"><use href="#i-person"/></svg>
@@ -394,7 +395,7 @@
       </div>
       <div>
         <span class="eyebrow" data-reveal>Em destaque</span>
-        <h2 data-reveal data-reveal-delay="1">Pilates: entre um compromisso e outro, escolha você</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Pilates: entre um compromisso e outro, escolha você</h2>
         <p data-reveal data-reveal-delay="2">
           Nosso estúdio de Pilates une equipamentos completos e orientação próxima para
           você ganhar força, flexibilidade e postura — no seu ritmo, com segurança e
@@ -406,7 +407,7 @@
           <li data-reveal data-reveal-delay="3"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg> Complemento perfeito para tratamentos de fisioterapia</li>
           <li data-reveal data-reveal-delay="4"><svg class="ico" aria-hidden="true"><use href="#i-check-circle"/></svg> Aceita Wellhub (Gold+), ClassPass e Namu Pass</li>
         </ul>
-        <a class="btn btn--primary" href="https://wa.me/5511988058005?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20de%20Pilates." target="_blank" rel="noopener" data-reveal data-reveal-delay="4">
+        <a class="btn btn--primary" data-magnetic href="https://wa.me/5511988058005?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20de%20Pilates." target="_blank" rel="noopener" data-reveal data-reveal-delay="4">
           <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
           Agendar aula de Pilates
         </a>
@@ -419,24 +420,24 @@
     <div class="container">
       <div class="section__head">
         <span class="eyebrow" data-reveal>Equipe</span>
-        <h2 data-reveal data-reveal-delay="1">Quem cuida de você</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Quem cuida de você</h2>
         <p data-reveal data-reveal-delay="2">Seis fisioterapeutas com formações complementares — do esporte à gerontologia, da saúde pélvica à reabilitação neurológica.</p>
       </div>
 
       <div class="cards cards--team">
-        <article class="card card--team" data-reveal>
+        <article class="card card--team" data-tilt data-reveal>
           <div class="avatar">
-            <img src="assets/img/equipe/marcia.jpg" alt="Márcia" width="560" height="560" loading="lazy" decoding="async" />
+            <img src="assets/img/equipe/marcia.jpg" alt="Marcia Böttcher" width="560" height="560" loading="lazy" decoding="async" />
           </div>
           <div class="card--team__info">
-            <h3>Márcia</h3>
+            <h3>Marcia Böttcher</h3>
             <p class="card--team__role">Hidroterapia · Esportiva · Gerontologia</p>
             <p class="card--team__crefito">CREFITO 39705-F</p>
           </div>
           <p class="card--team__bio">Fisioterapeuta e educadora física, especialista em Hidroterapia, Fisioterapia Esportiva e Geriatria e Gerontologia.</p>
         </article>
 
-        <article class="card card--team" data-reveal data-reveal-delay="1">
+        <article class="card card--team" data-tilt data-reveal data-reveal-delay="1">
           <div class="avatar">
             <img src="assets/img/equipe/anapaula.jpg" alt="Ana Paula Volkers" width="560" height="560" loading="lazy" decoding="async" />
           </div>
@@ -448,7 +449,7 @@
           <p class="card--team__bio">Especializada em Saúde da Mulher e do Homem pela Santa Casa de São Paulo, com atuação em Fisioterapia Pélvica e formação completa em RPG e Pilates.</p>
         </article>
 
-        <article class="card card--team" data-reveal data-reveal-delay="2">
+        <article class="card card--team" data-tilt data-reveal data-reveal-delay="2">
           <div class="avatar">
             <img src="assets/img/equipe/caroline.jpg" alt="Caroline Espíndola de Andrade" width="560" height="560" loading="lazy" decoding="async" />
           </div>
@@ -460,7 +461,7 @@
           <p class="card--team__bio">Fisioterapeuta pela Universidade de Mogi das Cruzes, especializada em Gerontologia pela FMU e com formação completa em Pilates.</p>
         </article>
 
-        <article class="card card--team" data-reveal data-reveal-delay="3">
+        <article class="card card--team" data-tilt data-reveal data-reveal-delay="3">
           <div class="avatar">
             <img src="assets/img/equipe/rosalia.jpg" alt="Rosália Firmino da Silva" width="560" height="560" loading="lazy" decoding="async" />
           </div>
@@ -472,7 +473,7 @@
           <p class="card--team__bio">Fisioterapeuta pelo Centro Universitário Sant&rsquo;Anna e pós-graduada em Fisioterapia em UTI, com atuação em Ortopédica, Neurológica, Respiratória e Pilates.</p>
         </article>
 
-        <article class="card card--team" data-reveal data-reveal-delay="4">
+        <article class="card card--team" data-tilt data-reveal data-reveal-delay="4">
           <div class="avatar">
             <img src="assets/img/equipe/thales.jpg" alt="Thales Romero" width="560" height="560" loading="lazy" decoding="async" />
           </div>
@@ -484,7 +485,7 @@
           <p class="card--team__bio">Especializado em Fisioterapia do Esporte e Exercício pelo HCFMUSP, com atuação junto a atletas de alto rendimento e na reabilitação de lesões.</p>
         </article>
 
-        <article class="card card--team" data-reveal data-reveal-delay="5">
+        <article class="card card--team" data-tilt data-reveal data-reveal-delay="5">
           <div class="avatar">
             <img src="assets/img/equipe/marcelo.jpg" alt="Marcelo Hirose" width="560" height="560" loading="lazy" decoding="async" />
           </div>
@@ -504,7 +505,7 @@
     <div class="container">
       <div class="section__head">
         <span class="eyebrow" data-reveal>Depoimentos</span>
-        <h2 data-reveal data-reveal-delay="1">O que dizem nossos pacientes</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">O que dizem nossos pacientes</h2>
       </div>
 
       <!-- TODO: substituir por depoimentos reais (com autorização dos pacientes) -->
@@ -572,23 +573,23 @@
     <div class="container">
       <div class="section__head">
         <span class="eyebrow" data-reveal>Parcerias</span>
-        <h2 data-reveal data-reveal-delay="1">Seu passe vale aqui</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Seu passe vale aqui</h2>
         <p data-reveal data-reveal-delay="2">Nosso estúdio é parceiro dos principais passes de bem-estar do mercado.</p>
       </div>
       <div class="partners">
-        <div class="partner" data-reveal>
+        <div class="partner" data-tilt data-reveal>
           <div class="partner__logo">
             <img src="assets/img/parceiros/wellhub.svg" alt="Wellhub" width="141" height="26" loading="lazy" />
           </div>
           <p>Antigo Gympass · planos Gold+ ou superiores</p>
         </div>
-        <div class="partner" data-reveal data-reveal-delay="1">
+        <div class="partner" data-tilt data-reveal data-reveal-delay="1">
           <div class="partner__logo">
             <img src="assets/img/parceiros/classpass.svg" alt="ClassPass" width="500" height="75" loading="lazy" />
           </div>
           <p>Reserve sua aula pelo app</p>
         </div>
-        <div class="partner" data-reveal data-reveal-delay="2">
+        <div class="partner" data-tilt data-reveal data-reveal-delay="2">
           <div class="partner__logo">
             <img src="assets/img/parceiros/namu.png" alt="Namu Pass" width="678" height="219" loading="lazy" />
           </div>
@@ -604,7 +605,7 @@
     <div class="container container--narrow">
       <div class="section__head">
         <span class="eyebrow" data-reveal>Agendamento</span>
-        <h2 data-reveal data-reveal-delay="1">Monte sua mensagem em 30 segundos</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Monte sua mensagem em 30 segundos</h2>
         <p data-reveal data-reveal-delay="2">
           Preencha os campos e abrimos o WhatsApp com tudo já escrito. Nada é enviado
           para outro lugar — a mensagem sai direto do seu aparelho para a clínica.
@@ -677,7 +678,7 @@
     <div class="container section__grid">
       <div>
         <span class="eyebrow" data-reveal>Localização</span>
-        <h2 data-reveal data-reveal-delay="1">Fácil de chegar, difícil de esquecer</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Fácil de chegar, difícil de esquecer</h2>
 
         <address class="address" data-reveal data-reveal-delay="2">
           <svg class="ico address__ico" aria-hidden="true"><use href="#i-pin"/></svg>
@@ -740,7 +741,7 @@
     <div class="container container--narrow">
       <div class="section__head">
         <span class="eyebrow" data-reveal>Dúvidas frequentes</span>
-        <h2 data-reveal data-reveal-delay="1">Perguntas que recebemos com carinho</h2>
+        <h2 class="split" data-reveal data-reveal-delay="1">Perguntas que recebemos com carinho</h2>
       </div>
 
       <div class="faq" id="faqList">
@@ -799,7 +800,7 @@
     <div class="container" data-reveal>
       <h2>Pronto para se mover sem dor?</h2>
       <p>Agende sua avaliação e comece hoje uma nova relação com o seu corpo.</p>
-      <a class="btn btn--light btn--lg" href="https://wa.me/5511988058005?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+      <a class="btn btn--light btn--lg" data-magnetic href="https://wa.me/5511988058005?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
         <svg class="ico" aria-hidden="true"><use href="#i-whatsapp"/></svg>
         Agendar minha avaliação
       </a>
@@ -868,6 +869,6 @@
   </a>
 </div>
 
-<script src="assets/js/main.js?v=9"></script>
+<script src="assets/js/main.js?v=12"></script>
 </body>
 </html>

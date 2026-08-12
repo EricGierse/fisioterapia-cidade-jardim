@@ -692,6 +692,162 @@
     });
   })();
 
+  /* ===================================================================
+     MOVIMENTO
+     Efeitos de ponteiro escrevem em `translate` e `rotate` — propriedades
+     separadas de `transform` — para somar aos hovers e keyframes do CSS
+     em vez de sobrescrevê-los. Tudo aqui é enfeite: se um módulo sair
+     cedo, a página continua completa e utilizável.
+     =================================================================== */
+
+  /* Ponteiro de verdade. Em toque, `hover` é simulado e os efeitos ficam
+     grudados no último elemento tocado. */
+  var mqFine = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  /* --------------------------------------------- Título palavra a palavra */
+  (function splitModule() {
+    var alvos = $$(".split");
+    if (!alvos.length) return;
+
+    /* Percorre só nós de texto: o <em> de "Movimento que <em>cuida</em> de
+       você" continua inteiro, com as palavras embrulhadas dentro dele. */
+    function quebrar(raiz, contador) {
+      var textos = [];
+      var walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, null);
+      while (walker.nextNode()) textos.push(walker.currentNode);
+
+      textos.forEach(function (no) {
+        if (!no.nodeValue.trim()) return;
+        var frag = document.createDocumentFragment();
+        no.nodeValue.split(/(\s+)/).forEach(function (parte) {
+          if (!parte) return;
+          if (!parte.trim()) {
+            frag.appendChild(document.createTextNode(parte));
+            return;
+          }
+          var s = document.createElement("span");
+          s.className = "w";
+          s.style.setProperty("--i", contador.n++);
+          s.textContent = parte;
+          frag.appendChild(s);
+        });
+        no.parentNode.replaceChild(frag, no);
+      });
+    }
+
+    alvos.forEach(function (el) {
+      quebrar(el, { n: 0 });
+      /* Sem data-reveal ninguém adiciona `is-visible`, e as palavras
+         ficariam invisíveis para sempre. */
+      if (!el.hasAttribute("data-reveal")) el.classList.add("is-visible");
+    });
+  })();
+
+  /* ------------------------------------------- Inclinação 3D dos cartões */
+  (function tiltModule() {
+    var els = $$("[data-tilt]");
+    if (!els.length || reduceMotion || !mqFine.matches) return;
+
+    var MAX = 7;   /* graus */
+
+    els.forEach(function (el) {
+      var caixa = null;
+      var pendente = null;
+      var agendado = false;
+
+      function pintar() {
+        agendado = false;
+        if (!caixa || !pendente) return;
+
+        var px = (pendente.x - caixa.left) / caixa.width;
+        var py = (pendente.y - caixa.top) / caixa.height;
+        el.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+        el.style.setProperty("--my", (py * 100).toFixed(1) + "%");
+
+        /* rotateX + rotateY viram um único eixo: para ângulos pequenos, girar
+           em torno de (rx, ry, 0) equivale a compor as duas rotações — e cabe
+           na propriedade `rotate`, que não briga com o `transform` do hover. */
+        var rx = (py - 0.5) * 2 * MAX;
+        var ry = (px - 0.5) * 2 * MAX;
+        var ang = Math.sqrt(rx * rx + ry * ry);
+        el.style.rotate = ang < 0.05 ? "" :
+          (rx / ang).toFixed(3) + " " + (ry / ang).toFixed(3) + " 0 " + ang.toFixed(2) + "deg";
+      }
+
+      el.addEventListener("pointerenter", function (e) {
+        if (e.pointerType !== "mouse") return;
+        caixa = el.getBoundingClientRect();
+        el.classList.add("is-tilting");
+      });
+
+      el.addEventListener("pointermove", function (e) {
+        if (e.pointerType !== "mouse" || !caixa) return;
+        pendente = { x: e.clientX, y: e.clientY };
+        if (agendado) return;
+        agendado = true;
+        window.requestAnimationFrame(pintar);
+      });
+
+      el.addEventListener("pointerleave", function () {
+        caixa = null;
+        pendente = null;
+        el.classList.remove("is-tilting");   /* devolve a transição suave */
+        el.style.rotate = "";
+      });
+    });
+  })();
+
+  /* ------------------------------------------------- Botões magnéticos */
+  (function magneticModule() {
+    var els = $$("[data-magnetic]");
+    if (!els.length || reduceMotion || !mqFine.matches) return;
+
+    els.forEach(function (el) {
+      var caixa = null;
+
+      el.addEventListener("pointerenter", function (e) {
+        if (e.pointerType !== "mouse") return;
+        caixa = el.getBoundingClientRect();
+        el.classList.add("is-pulling");
+      });
+
+      el.addEventListener("pointermove", function (e) {
+        if (!caixa) return;
+        var dx = (e.clientX - (caixa.left + caixa.width / 2)) * 0.2;
+        var dy = (e.clientY - (caixa.top + caixa.height / 2)) * 0.28;
+        el.style.translate = dx.toFixed(1) + "px " + dy.toFixed(1) + "px";
+      });
+
+      el.addEventListener("pointerleave", function () {
+        caixa = null;
+        el.classList.remove("is-pulling");
+        el.style.translate = "";
+      });
+    });
+  })();
+
+  /* --------------------------------------------- Parallax na rolagem */
+  (function scrollParallaxModule() {
+    var els = $$("[data-parallax]");
+    if (!els.length || reduceMotion) return;
+
+    onScroll(function () {
+      var vh = window.innerHeight;
+
+      /* Lê todos os retângulos antes de escrever qualquer estilo: intercalar
+         leitura e escrita forçaria um recálculo de layout por elemento. */
+      var medidas = els.map(function (el) { return el.getBoundingClientRect(); });
+
+      els.forEach(function (el, i) {
+        var r = medidas[i];
+        if (r.bottom < -240 || r.top > vh + 240) return;
+        var vel = parseFloat(el.getAttribute("data-parallax")) || 0.1;
+        var p = ((r.top + r.height / 2) - vh / 2) / vh;   /* -1 .. 1 */
+        el.style.translate = "0 " + (p * vel * -100).toFixed(1) + "px";
+      });
+    });
+  })();
+
   /* ------------------------------------------------------- Ano do rodapé */
   (function yearModule() {
     var el = $("#year");
