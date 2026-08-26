@@ -26,7 +26,7 @@
 
   <!-- O ?v= força o navegador a baixar a versão nova em vez de usar a do
        cache. Incremente o número sempre que editar o CSS ou o JS. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=13" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=14" />
 
   <!-- Marca que o JS está ativo. Sem isso, todo conteúdo animado permanece visível. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -117,9 +117,11 @@
   <!-- Serviços -->
   <symbol id="i-bone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.7 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .8.7 1.8 0 2.5l-7 7c-.7.7-1.7 0-2.5 0a2.5 2.5 0 0 0 0 5c.3 0 .5.2.5.5a2.5 2.5 0 1 0 5 0c0-.8-.7-1.8 0-2.5Z"/></g></symbol>
   <symbol id="i-flower" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.6"/><path d="M12 9.4a3.2 3.2 0 1 1 3.2 2.6M12 9.4A3.2 3.2 0 1 0 8.8 12m3.2 2.6a3.2 3.2 0 1 0 3.2-2.6M12 14.6A3.2 3.2 0 1 1 8.8 12"/></g></symbol>
-  <!-- Posição Teaser: o "V" clássico do Pilates — equilíbrio sobre os
-       ísquios, tronco e pernas estendidos, braços alcançando os pés. -->
-  <symbol id="i-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7.4v5.2"/><path d="M12 9.3C10 10.4 8.2 12.6 7.5 15.4"/><path d="M12 9.3c2 1.1 3.8 3.3 4.5 6.1"/><path d="M11.3 13.1 6.6 17.6l5.1 1.1"/><path d="M12.7 13.1 17.4 17.6l-5.1 1.1"/></g></symbol>
+  <!-- Posição Teaser: o "V" clássico do Pilates — equilíbrio sobre os ísquios,
+       tronco e pernas estendidos, braços alcançando os pés. Desenhado de
+       perfil, e não de frente: de frente os quatro membros se sobrepõem e o
+       ícone vira um emaranhado nos 22–27px em que ele de fato aparece. -->
+  <symbol id="i-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12.6" cy="6.6" r="2.1"/><path d="M11.6 9.2 5.8 17.8"/><path d="M5.8 17.8 18.8 13.4"/><path d="M11.6 10.6 18 10.4"/></g></symbol>
   <symbol id="i-ruler" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13.1 2.6a2 2 0 0 1 2.8 0l5.5 5.5a2 2 0 0 1 0 2.8l-10.1 10.1a2 2 0 0 1-2.8 0l-5.5-5.5a2 2 0 0 1 0-2.8Z"/><path d="m14.5 5.5 1.8 1.8M11.8 8.2l1.8 1.8M9.1 10.9l1.8 1.8M6.4 13.6l1.8 1.8"/></g></symbol>
   <symbol id="i-hands" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11 13.5h2.2a2 2 0 1 0 0-4h-3.3c-.6 0-1.2.2-1.6.7L2.8 15.7"/><path d="m6.6 20.5 1.8-1.6c.4-.4.9-.6 1.5-.6h4.4c1.2 0 2.3-.5 3.1-1.3l4.1-4a1.9 1.9 0 0 0-2.6-2.8l-3.8 3.5"/></g></symbol>
   <symbol id="i-waves" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7c.7.6 1.4 1.1 2.7 1.1C7.3 8.1 7.3 6 10 6s2.7 2.1 5.3 2.1c1.3 0 2-.5 2.7-1.1M2 12.5c.7.6 1.4 1.1 2.7 1.1 2.6 0 2.6-2.1 5.3-2.1s2.7 2.1 5.3 2.1c1.3 0 2-.5 2.7-1.1M2 18c.7.6 1.4 1.1 2.7 1.1 2.6 0 2.6-2.1 5.3-2.1s2.7 2.1 5.3 2.1c1.3 0 2-.5 2.7-1.1"/></g></symbol>
@@ -167,6 +169,7 @@
       <ul class="nav__menu">
         <li><a href="#sobre" data-spy>A clínica</a></li>
         <li><a href="#servicos" data-spy>Serviços</a></li>
+        <li><a href="#espaco" data-spy>O espaço</a></li>
         <li><a href="#equipe" data-spy>Equipe</a></li>
         <li><a href="#parcerias" data-spy>Parcerias</a></li>
         <li><a href="#localizacao" data-spy>Localização</a></li>
@@ -397,15 +400,75 @@
     </div>
   </section>
 
+  <!-- ============ O ESPAÇO ============ -->
+  <!-- Faixa escura em vez de `section--alt`: a galeria fica entre duas seções
+       claras, e o fundo escuro separa as três sem quebrar a alternância areia
+       /branco do resto da página — além de fazer as fotos ganharem contraste. -->
+  <section class="section espaco" id="espaco">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow" data-reveal>O espaço</span>
+        <h2 class="split" data-reveal data-reveal-delay="1">Conheça a clínica por dentro</h2>
+        <p data-reveal data-reveal-delay="2">
+          Salas individuais de atendimento, estúdio de Pilates com equipamentos completos
+          e área de musculação — tudo em um só endereço, no Jardim Paulistano.
+        </p>
+      </div>
+
+      <ul class="galeria">
+        <li class="galeria__item" data-reveal="zoom">
+          <img src="assets/img/fotos/espaco-atendimento.jpg" width="900" height="672" loading="lazy" decoding="async"
+               alt="Sala ampla de atendimento, com maca, poltrona e mesa de avaliação." />
+          <span>Sala de atendimento</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom" data-reveal-delay="1">
+          <img src="assets/img/fotos/espaco-sala-1.jpg" width="678" height="900" loading="lazy" decoding="async"
+               alt="Sala reservada de fisioterapia, com maca e biombo." />
+          <span>Atendimento reservado</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom" data-reveal-delay="2">
+          <img src="assets/img/fotos/espaco-sala-2.jpg" width="678" height="900" loading="lazy" decoding="async"
+               alt="Sala de fisioterapia com maca, esteira e equipamentos de apoio à marcha." />
+          <span>Reabilitação funcional</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom" data-reveal-delay="3">
+          <img src="assets/img/fotos/espaco-avaliacao.jpg" width="678" height="900" loading="lazy" decoding="async"
+               alt="Espaço de avaliação, com mesa e cadeiras." />
+          <span>Avaliação</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom">
+          <img src="assets/img/fotos/espaco-musculacao.jpg" width="678" height="900" loading="lazy" decoding="async"
+               alt="Área de musculação, com halteres, cama elástica e barra sueca." />
+          <span>Área de musculação</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom" data-reveal-delay="1">
+          <img src="assets/img/fotos/espaco-aparelhos.jpg" width="678" height="900" loading="lazy" decoding="async"
+               alt="Corredor da clínica com os aparelhos de musculação ao fundo." />
+          <span>Aparelhos</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom" data-reveal-delay="2">
+          <img src="assets/img/fotos/espaco-pilates-1.jpg" width="678" height="900" loading="lazy" decoding="async"
+               alt="Estúdio de Pilates, com cadeira, reformer e espelho." />
+          <span>Estúdio de Pilates</span>
+        </li>
+        <li class="galeria__item" data-reveal="zoom" data-reveal-delay="3">
+          <img src="assets/img/fotos/espaco-pilates-2.jpg" width="900" height="672" loading="lazy" decoding="async"
+               alt="Vista geral do estúdio de Pilates, com reformer, cadillac e cadeira." />
+          <span>Equipamentos completos</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ============ PILATES ============ -->
   <section class="section highlight" id="pilates">
     <div class="container section__grid">
-      <div class="highlight__art" data-reveal="left" data-parallax="0.09" aria-hidden="true">
-        <div class="highlight__panel">
-          <!-- TODO: trocar por foto real (assets/img/fotos/estudio-pilates.jpg) -->
-          <svg class="highlight__big" aria-hidden="true"><use href="#i-person"/></svg>
-          <p class="highlight__caption">Estúdio de Pilates<br /><small>equipamentos completos</small></p>
-        </div>
+      <div class="highlight__art" data-reveal="left" data-parallax="0.09">
+        <figure class="highlight__panel">
+          <img src="assets/img/fotos/estudio-pilates.jpg" width="900" height="1125" loading="lazy" decoding="async"
+               alt="Estúdio de Pilates da clínica, com barrel, cadillac, reformer e escada sueca." />
+          <figcaption class="highlight__caption">Estúdio de Pilates<br /><small>equipamentos completos</small></figcaption>
+        </figure>
       </div>
       <div>
         <span class="eyebrow" data-reveal>Em destaque</span>
@@ -850,6 +913,7 @@
       <ul>
         <li><a href="#sobre">A clínica</a></li>
         <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#espaco">O espaço</a></li>
         <li><a href="#equipe">Equipe</a></li>
         <li><a href="#agendar">Agendar</a></li>
       </ul>
@@ -883,6 +947,6 @@
   </a>
 </div>
 
-<script src="assets/js/main.js?v=13"></script>
+<script src="assets/js/main.js?v=14"></script>
 </body>
 </html>

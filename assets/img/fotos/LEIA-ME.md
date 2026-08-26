@@ -6,6 +6,26 @@ Aceita `.jpg`, `.jpeg`, `.png` ou `.webp` — só mantenha o nome antes do ponto
 Não precisa mandar todas de uma vez. As que faltarem continuam com o
 ícone atual até você enviar.
 
+## O que já está aqui
+
+| Arquivo | Onde aparece |
+| --- | --- |
+| `estudio-pilates.jpg` | painel da seção **Pilates** |
+| `espaco-atendimento.jpg` | galeria **O espaço** |
+| `espaco-sala-1.jpg` | galeria **O espaço** |
+| `espaco-sala-2.jpg` | galeria **O espaço** |
+| `espaco-avaliacao.jpg` | galeria **O espaço** |
+| `espaco-musculacao.jpg` | galeria **O espaço** |
+| `espaco-aparelhos.jpg` | galeria **O espaço** |
+| `espaco-pilates-1.jpg` | galeria **O espaço** |
+| `espaco-pilates-2.jpg` | galeria **O espaço** |
+
+> Estas nove saíram de *screenshots* do WhatsApp, então estão em resolução de
+> tela — boas no tamanho em que o site usa, mas não dá para ampliar. Se
+> chegarem os arquivos originais da câmera, é só substituir mantendo o nome.
+
+As tabelas abaixo continuam valendo para o que **ainda falta**.
+
 ## Serviços (9 fotos) — corte quadrado, mín. 600×600
 
 | Arquivo | O que mostrar |
