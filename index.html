@@ -26,7 +26,7 @@
 
   <!-- O ?v= força o navegador a baixar a versão nova em vez de usar a do
        cache. Incremente o número sempre que editar o CSS ou o JS. -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=14" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=17" />
 
   <!-- Marca que o JS está ativo. Sem isso, todo conteúdo animado permanece visível. -->
   <script>document.documentElement.classList.add('js');</script>
@@ -187,8 +187,10 @@
 <main id="conteudo">
   <!-- ============ HERO ============ -->
   <section class="hero" id="topo">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <div class="hero__aura" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__glow"></div>
+      <div class="hero__aura"><i></i><i></i><i></i></div>
+    </div>
     <div class="container hero__grid">
       <div class="hero__content">
         <span class="eyebrow" data-reveal="zoom">
@@ -212,7 +214,7 @@
           </a>
         </div>
         <ul class="hero__badges" data-reveal data-reveal-delay="4">
-          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Avaliação individualizada</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Primeira avaliação e já iniciamos o tratamento</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Atendimento a domicílio</li>
           <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Wellhub · ClassPass · Namu</li>
         </ul>
@@ -279,9 +281,10 @@
           em uma estrutura ainda mais confortável, a poucos metros do endereço anterior.
         </p>
         <p data-reveal data-reveal-delay="3">
-          Aqui, cada tratamento começa com uma <strong>avaliação fisioterapêutica completa</strong>:
-          identificamos a causa do problema e elaboramos um plano individualizado para aliviar a dor,
-          recuperar os movimentos e prevenir novas lesões. Sua qualidade de vida começa pelo movimento.
+          Aqui, cada tratamento começa com uma avaliação fisioterapêutica completa — e
+          <strong>na primeira avaliação já iniciamos o tratamento</strong>: identificamos a causa do
+          problema e elaboramos um plano individualizado para aliviar a dor, recuperar os movimentos e
+          prevenir novas lesões. Sua qualidade de vida começa pelo movimento.
         </p>
         <!-- TODO: substituir/complementar com o texto oficial da clínica (história, missão, diferenciais) -->
         <a class="btn btn--outline" href="https://www.instagram.com/fisioterapiacidadejardim/" target="_blank" rel="noopener" data-reveal data-reveal-delay="4">
@@ -498,7 +501,7 @@
       <div class="section__head">
         <span class="eyebrow" data-reveal>Equipe</span>
         <h2 class="split" data-reveal data-reveal-delay="1">Quem cuida de você</h2>
-        <p data-reveal data-reveal-delay="2">Seis fisioterapeutas com formações complementares — do esporte à gerontologia, da saúde pélvica à reabilitação neurológica.</p>
+        <p data-reveal data-reveal-delay="2">Fisioterapeutas com formações complementares — do esporte à gerontologia, da saúde pélvica à acupuntura e à reabilitação neurológica.</p>
       </div>
 
       <div class="cards cards--team">
@@ -528,14 +531,14 @@
 
         <article class="card card--team" data-tilt data-reveal data-reveal-delay="2">
           <div class="avatar">
-            <img src="assets/img/equipe/caroline.jpg" alt="Caroline Espíndola de Andrade" width="560" height="560" loading="lazy" decoding="async" />
+            <img src="assets/img/equipe/daniely.jpg" alt="Daniely Geralda da Silva" width="560" height="560" loading="lazy" decoding="async" />
           </div>
           <div class="card--team__info">
-            <h3>Caroline Espíndola de Andrade</h3>
-            <p class="card--team__role">Gerontologia</p>
-            <p class="card--team__crefito">CREFITO 212383-F</p>
+            <h3>Daniely Geralda da Silva</h3>
+            <p class="card--team__role">Pélvica · Hidroterapia · Ortopédica</p>
+            <p class="card--team__crefito">CREFITO 352490-F</p>
           </div>
-          <p class="card--team__bio">Fisioterapeuta pela Universidade de Mogi das Cruzes, especializada em Gerontologia pela FMU e com formação completa em Pilates.</p>
+          <p class="card--team__bio">Especialista em Fisioterapia Pélvica na saúde da mulher e do homem pela Santa Casa, com formação em RPG e Pilates e atuação em Hidroterapia e Ortopédica.</p>
         </article>
 
         <article class="card card--team" data-tilt data-reveal data-reveal-delay="3">
@@ -564,6 +567,18 @@
 
         <article class="card card--team" data-tilt data-reveal data-reveal-delay="5">
           <div class="avatar">
+            <img src="assets/img/equipe/sandra.jpg" alt="Sandra Elaine Gonçalves Santos" width="560" height="560" loading="lazy" decoding="async" />
+          </div>
+          <div class="card--team__info">
+            <h3>Sandra Elaine Gonçalves Santos</h3>
+            <p class="card--team__role">Acupuntura · Ortopédica · Neurológica</p>
+            <p class="card--team__crefito">CREFITO 23551-F</p>
+          </div>
+          <p class="card--team__bio">Especialista em Acupuntura e Medicina Tradicional Chinesa, com formação em RPG/RPM e Pilates e atuação em reabilitação ortopédica, neurológica e geriátrica.</p>
+        </article>
+
+        <article class="card card--team" data-tilt data-reveal data-reveal-delay="6">
+          <div class="avatar">
             <img src="assets/img/equipe/marcelo.jpg" alt="Marcelo Hirose" width="560" height="560" loading="lazy" decoding="async" />
           </div>
           <div class="card--team__info">
@@ -585,7 +600,10 @@
         <h2 class="split" data-reveal data-reveal-delay="1">O que dizem nossos pacientes</h2>
       </div>
 
-      <!-- TODO: substituir por depoimentos reais (com autorização dos pacientes) -->
+      <!-- Depoimentos copiados sem edição das avaliações públicas da clínica no Google Maps
+           (14/09/2026). Resolução COFFITO 532/2021: publicar texto de paciente exige TCLE
+           assinado, nome e CREFITO do profissional responsável e a data do texto.
+           Não publicar sem esse consentimento. -->
       <div class="carousel" id="carousel" data-reveal>
         <div class="carousel__viewport" id="carouselViewport">
           <ul class="carousel__track" id="carouselTrack">
@@ -595,8 +613,8 @@
                 <div class="quote__stars" aria-label="5 de 5 estrelas">
                   <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
                 </div>
-                <p>[Espaço reservado para depoimento real de paciente — inserir com autorização.]</p>
-                <footer>— [Nome do paciente]</footer>
+                <p>Clínica incrível, fisioterapeutas muitos atenciosos. Local aconchegante. Parabéns a todos.</p>
+                <footer>— Durval W.<span class="quote__fonte">avaliação no Google · 2026</span></footer>
               </blockquote>
             </li>
             <li class="carousel__slide">
@@ -605,8 +623,8 @@
                 <div class="quote__stars" aria-label="5 de 5 estrelas">
                   <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
                 </div>
-                <p>[Espaço reservado para depoimento real de paciente — inserir com autorização.]</p>
-                <footer>— [Nome do paciente]</footer>
+                <p>Equipe fantástica! Clinica 10/10! Fisio e a aula de pilates são muito boas. Me salvou de muitas crises na coluna, recomendo e muito!</p>
+                <footer>— Marcelle D.<span class="quote__fonte">avaliação no Google · 2026</span></footer>
               </blockquote>
             </li>
             <li class="carousel__slide">
@@ -615,18 +633,8 @@
                 <div class="quote__stars" aria-label="5 de 5 estrelas">
                   <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
                 </div>
-                <p>[Espaço reservado para depoimento real de paciente — inserir com autorização.]</p>
-                <footer>— [Nome do paciente]</footer>
-              </blockquote>
-            </li>
-            <li class="carousel__slide">
-              <blockquote class="quote">
-                <svg class="quote__mark" aria-hidden="true"><use href="#i-quote"/></svg>
-                <div class="quote__stars" aria-label="5 de 5 estrelas">
-                  <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
-                </div>
-                <p>[Espaço reservado para depoimento real de paciente — inserir com autorização.]</p>
-                <footer>— [Nome do paciente]</footer>
+                <p>Lugar maravilhoso...difícil achar profissionais tão competentes e acolhedores ...Recomendo muito..!!!!</p>
+                <footer>— Sergio C.<span class="quote__fonte">avaliação no Google · 2026</span></footer>
               </blockquote>
             </li>
           </ul>
@@ -642,6 +650,11 @@
           </button>
         </div>
       </div>
+
+      <p class="depo-google" data-reveal>
+        Depoimentos publicados por pacientes no Google.
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJVxDWTgxXzpQROF7EMr2PMX4" target="_blank" rel="noopener">Ver todas as avaliações</a>
+      </p>
     </div>
   </section>
 
@@ -829,7 +842,7 @@
               <svg class="ico faq__ico" aria-hidden="true"><use href="#i-chevron"/></svg>
             </button>
           </h3>
-          <div class="faq__panel"><div class="faq__inner"><p>A primeira visita começa com uma avaliação fisioterapêutica completa: conversamos sobre seu histórico, avaliamos postura e movimento e traçamos juntos o plano de tratamento ideal para o seu caso.</p></div></div>
+          <div class="faq__panel"><div class="faq__inner"><p>A primeira visita começa com uma avaliação fisioterapêutica completa: conversamos sobre seu histórico, avaliamos postura e movimento e traçamos juntos o plano de tratamento ideal para o seu caso — e o tratamento já começa nessa mesma sessão.</p></div></div>
         </div>
         <div class="faq__item" data-reveal>
           <h3>

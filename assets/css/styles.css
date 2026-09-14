@@ -244,8 +244,14 @@ a { color: inherit; }
 
 /* ---------- Hero ---------- */
 .hero {
-  position: relative; isolation: isolate; overflow: hidden;
+  position: relative; isolation: isolate;
   background: linear-gradient(180deg, #fdfffe 0%, #eff7f7 100%);
+}
+/* O clipping vive aqui, não em `.hero`: os botões magnéticos do hero
+   precisam poder se deslocar um pouco além da caixa da seção sem que o
+   `overflow: hidden` que contém os borrões de fundo corte parte deles fora. */
+.hero__bg {
+  position: absolute; inset: 0; overflow: hidden; z-index: -1; pointer-events: none;
 }
 .hero__glow {
   position: absolute; inset: -20% -10% auto -10%; height: 130%; z-index: -1;
@@ -542,6 +548,10 @@ html:not(.js) .carousel__controls { display: none; }
 .quote__stars svg { width: 17px; height: 17px; }
 .quote p { font-style: italic; font-size: 1rem; }
 .quote footer { margin-top: auto; padding-top: 0.6rem; font-weight: 700; color: var(--brand); font-size: 0.9rem; }
+/* de onde veio o depoimento: discreto, mas legível para quem lê no celular */
+.quote__fonte { display: block; margin-top: 0.15rem; font-weight: 500; color: var(--ink-mute); font-size: 0.82rem; }
+.depo-google { margin-top: 1.6rem; text-align: center; font-size: 0.95rem; color: var(--ink-soft); }
+.depo-google a { color: var(--brand); font-weight: 700; text-underline-offset: 3px; }
 
 .carousel__controls {
   display: flex; align-items: center; justify-content: center; gap: 1.1rem;
@@ -889,10 +899,12 @@ body.is-locked { overflow: hidden; }
   clip-path: inset(0 0 100% 0);
   transition-duration: 1.05s;
 }
-.js [data-reveal].is-visible {
-  filter: none;
-  clip-path: inset(0 0 0 0);
-}
+.js [data-reveal].is-visible { filter: none; }
+/* `clip-path` só na variante `mask`, que é a única que o anima. Aplicado a
+   todo elemento revelado, o `inset(0 0 0 0)` vira uma caixa de corte de
+   cantos retos no contorno exato do elemento: ela decepa a sombra dos botões
+   e corta os botões magnéticos assim que eles se deslocam para fora. */
+.js [data-reveal="mask"].is-visible { clip-path: inset(0 0 0 0); }
 
 /* ---------- Palavra a palavra ---------- */
 /* O elemento em si fica visível; quem entra são as palavras, uma a uma.
